@@ -62,8 +62,11 @@ cacheSolve <- function(x, ...) {
     
     # If the inverse is not already cached, the following code is executed
     data <- x$get() # stores the created matrix in a temporary object
+    
     matInvStore <- solve(data, ...) # Solves the matrix and assigns it's inverse to our temporary object
+    
     x$setInv(matInvStore) # caches the inverse of the matrix into the created matrix object
+    
     matInvStore # returns the inverse of the matrix to the console
 }
 
